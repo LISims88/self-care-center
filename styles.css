@@ -6,3 +6,55 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+h1,
+h2{
+    color: white;
+}
+body{
+    background-image: linear-gradient(#134d71,#78a7c6,#f7e4bf);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    height: 96vh;
+}
+main{
+    margin-top: 75pt;
+}
+.message-response{
+    background-color: white;
+    border-radius: 5pt;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-right: 350px;
+    margin-left: 350px;
+    margin-top: 75px;
+}
+img{
+  height: 55px;
+  width: 55px;
+}
+button{
+    background-color: #134d71;
+    color: white;
+    margin-top: 10px;
+} 
+.message-type-selector article > div {
+    display: inline-block;
+    justify-content: space-around
+}
+.message-type-selector article{
+    display: flex;
+  justify-content: space-evenly;
+
+}
+.message-type-selector{
+    background-color: white;
+    margin-right: 450px;
+    margin-left: 450px;
+    padding-top: 24px;
+    padding-bottom: 17px;
+    border-radius: 5pt;
+}

@@ -9,25 +9,26 @@
     <header>
       <h1> ✨Self Care Center ✨</h1>
     </header>
-    <section>
+    <main>
       <h2>Which type of message?</h2>
+    </main>
+    <section class="message-type-selector">
       <article>
-        <input type="radio" id="affirmation" name="message-type" value="affirmation">
-        <label for="affirmation">Affirmation</label><br>
-        <input type="radio" id="motivation" name="message-type" value="motivation">
-        <label for="motivation">Motivation</label><br>
-        <div> 
-          <button class="receive-message">Receive Message</button>
+        <div>
+          <input type="radio" id="affirmation" name="message-type" value="affirmation">
+          <label for="affirmation">Affirmation</label><br>
+        </div>
+        <div>
+          <input type="radio" id="motivation" name="message-type" value="motivation">
+          <label for="motivation">Motivation</label><br>
         </div>
       </article>
-
-    </section>
-    <section>
-      <img src="assets/meditate.svg" alt="meditation">
-      <div>
-        <button class="remove-message">I don't like this</button>
+      <div> 
+        <button class="receive-message">Receive Message</button>
       </div>
-
+    </section>
+    <section class="message-response">
+      <img src="assets/meditate.svg" alt="meditation">
     </section>
     <script type="text/javascript" src="main.js"></script>
   </body>

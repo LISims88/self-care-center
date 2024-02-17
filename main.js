@@ -1,5 +1,4 @@
 //DOM Variables
-var selectedSelfCare = document.querySelector('input[type="radio"]')
 var message = document.querySelector("p")
 var image = document.querySelector('img')
 var receiveMessageButton = document.querySelector(".receive-message")
@@ -41,21 +40,23 @@ createMessageView.classList.remove('hidden')
 
 //Functions 
 
-function getRandomMessage(){
-        var randomMessage = "";
-    if(selectedSelfCare){
+function getRandomMessage() {
+    var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
+    if (selectedSelfCare && selectedSelfCare.value) {
+        var randomMessage;
         switch (selectedSelfCare.value) {
             case 'affirmation':
                 randomMessage = getRandomAffirmation();
                 break;
-            case 'mantra':
-                randomMessage = getRandomMantra();
-                break;
-        }
-        message.innerText = `${randomMessage}`
-        showMessage()
-    }
-}
-function createMessage (){
+                case 'mantra':
+                    randomMessage = getRandomMantra();
+                    break;
+                }
+            console.log(randomMessage)
+            console.log(selectedSelfCare)
+            message.innerText = randomMessage;
+            showMessage();
+                
     
+    }
 }

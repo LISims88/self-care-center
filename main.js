@@ -3,16 +3,18 @@ var selectedSelfCare = document.querySelector('input[type="radio"]')
 var message = document.querySelector("p")
 var image = document.querySelector('img')
 var receiveMessageButton = document.querySelector(".receive-message")
-var removeMessageButton
-var createMessageButton
-var submitButton
-var cancelButton
+var removeMessageButton = document.querySelector(".remove-message")
+var createMessageButton = document.querySelector(".create-your-own")
+var submitButton = document.querySelector(".submit")
+var cancelButton = document.querySelector(".cancel")
 var messageResponseView = document.querySelector(".message-response") 
-var createMessageForm 
+var messageSelectorView = document.querySelector(".message-type-selector")
+var createMessageView = document.querySelector(".make-own-message")
 
 //Query Selectors
 receiveMessageButton.addEventListener('click', getRandomMessage);
-
+createMessageButton.addEventListener('click', showForm)
+//cancelButton.addEventListener("click", hideForm)
 //Event Handlers
 function getRandomAffirmation(){
     var randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
@@ -27,8 +29,15 @@ function getRandomMantra(){
 function showMessage(){
     image.style.display = 'none';
 
-}
 
+}
+function showForm(){
+messageSelectorView.classList.add('hidden');
+createMessageView.classList.remove('hidden')
+}
+// function hideForm(){
+ 
+// }
 
 //Functions 
 
@@ -46,4 +55,7 @@ function getRandomMessage(){
         message.innerText = `${randomMessage}`
         showMessage()
     }
+}
+function createMessage (){
+    
 }

@@ -19,17 +19,42 @@
           <label for="affirmation">affirmation</label><br>
         </div>
         <div>
-          <input type="radio" id="motivation" name="message-type" value="motivation">
-          <label for="motivation">motivation</label><br>
+          <input type="radio" id="mantra" name="message-type" value="mantra">
+          <label for="mantra">mantra</label><br>
         </div>
       </article>
       <div> 
         <button class="receive-message">Receive Message</button>
+        <button class="create-your-own hidden">Create Your Own</button>
       </div>
     </section>
-    <section class="message-response">
-      <img src="assets/meditate.svg" alt="meditation">
+    <section class="make-own-message hidden">
+      <article>
+        <div>
+          <input type="radio" id="affirmation-form" name="message-type" value="affirmation">
+          <label for="affirmation-form">affirmation</label><br>
+        </div>
+        <div>
+          <input type="radio" id="mantra-form" name="message-type" value="mantra">
+          <label for="mantra-form">mantra</label><br>
+        </div>
+      </article>
+      <form>
+        <div>
+          <label for="message-type">Type Your Message </label>
+          <input type="text" id="message-type" name="message" />
+        </div>
+        <div>
+          <button class="submit">Submit</button>
+          <button class="cancel">Cancel</button>
+        </div>
     </section>
+    <section class="message-response">
+      <img class="img" src="assets/meditate.svg" alt="meditation">
+      <p></p>
+      <button class="remove-message hidden">I don't Like This</button>
+    </section>
+    <script src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

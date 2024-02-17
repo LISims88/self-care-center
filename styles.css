@@ -31,13 +31,22 @@ main{
     padding-bottom: 17px;
     border-radius: 5pt;
 }
+.message-response-pending{
+    background-color: white;
+    border-radius: 5pt;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-right: 300px;
+    margin-left: 300px;
+    margin-top: 75px;
+}
 .message-response{
     background-color: white;
     border-radius: 5pt;
     padding-top: 45px;
     padding-bottom: 45px;
-    margin-right: 350px;
-    margin-left: 350px;
+    margin-right: 300px;
+    margin-left: 300px;
     margin-top: 75px;
 }
 img{
@@ -56,9 +65,32 @@ button{
 }
 .message-type-selector article{
     display: flex;
-  justify-content: space-evenly;
+    justify-content: space-evenly;
 
 }
 label{
     font-style: italic;
+}
+.hidden{
+    display: none;
+}
+
+.make-own-message article > div {
+    display: inline-block;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.make-own-message article{
+    display: flex;
+    justify-content: space-evenly; 
+}
+.make-own-message{
+    background-color: white;
+    margin-top: 70px;
+    margin-right: 450px;
+    margin-left: 450px;
+    padding-top: 24px;
+    padding-bottom: 17px;
+    border-radius: 5pt;
+
 }

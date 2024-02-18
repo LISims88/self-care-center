@@ -25,8 +25,8 @@ main{
 }
 .message-type-selector{
     background-color: white;
-    margin-right: 600px;
-    margin-left: 600px;
+    margin-right: 500px;
+    margin-left: 500px;
     padding-top: 24px;
     padding-bottom: 17px;
     border-radius: 5pt;
@@ -36,8 +36,8 @@ main{
     border-radius: 5pt;
     padding-top: 45px;
     padding-bottom: 45px;
-    margin-right: 450px;
-    margin-left: 450px;
+    margin-right: 400px;
+    margin-left: 400px;
     margin-top: 75px;
 }
 img{
@@ -77,8 +77,8 @@ label{
 }
 .make-own-message{
     background-color: white;
-    margin-right: 600px;
-    margin-left: 600px;
+    margin-right: 500px;
+    margin-left: 500px;
     padding-top: 24px;
     padding-bottom: 17px;
     border-radius: 5pt;

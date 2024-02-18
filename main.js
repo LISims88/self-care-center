@@ -15,6 +15,7 @@ receiveMessageButton.addEventListener('click', getRandomMessage);
 createMessageButton.addEventListener('click', showForm)
 cancelButton.addEventListener('click', hideForm)
 submitButton.addEventListener('click',createMessage)
+removeMessageButton.addEventListener("click", deleteMessage)
 //Event Handlers
 function getRandomAffirmation(){
     var randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
@@ -28,6 +29,8 @@ function getRandomMantra(){
 
 function showMessage(){
     image.style.display = 'none';
+    removeMessageButton.classList.remove('hidden')
+
 
 
 }
@@ -35,9 +38,10 @@ function showForm(){
 messageSelectorView.classList.add('hidden');
 createMessageView.classList.remove('hidden')
 }
-function hideForm(){
+function hideForm(event){
 messageSelectorView.classList.remove('hidden');
 createMessageView.classList.add('hidden')
+event.preventDefault()
 }
 
 
@@ -71,23 +75,32 @@ function createMessage(event){
     var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
     var userMessage = document.querySelector('input[name="user-message"').value
     if (selectedSelfCare && selectedSelfCare.value && userMessage) {
-              switch (selectedSelfCare.value) {
+            switch (selectedSelfCare.value) {
             case 'affirmation':
-                affirmations.push(userMessage)
+                affirmations.unshift(userMessage)
                 break;
             case 'mantra':
-                mantras.push(userMessage)
+                mantras.unshift(userMessage)
                 break;
         }
-        console.log('mantra1',userMessage)
-        console.log('mantra2',selectedSelfCare)
-        console.log('please',mantras)
-        //console.log('affirmations', affirmations)
-
         message.innerText = userMessage;
         event.preventDefault()
         showMessage()
-        
     }
-    
+}
+function deleteMessage(event){
+    var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
+    if (selectedSelfCare && selectedSelfCare.value) {
+        var message;
+        switch (selectedSelfCare.value) {
+            case 'affirmation':
+                message = affirmations.splice(message,1);
+                break;
+            case 'mantra':
+                message = mantras.splice(message,1);
+                break;
+        }
+        event.preventDefault()
+        getRandomMessage()
+    }
 }

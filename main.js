@@ -10,29 +10,25 @@ var messageResponseView = document.querySelector(".message-response")
 var messageSelectorView = document.querySelector(".message-type-selector")
 var createMessageView = document.querySelector(".make-own-message")
 
-//Query Selectors
+//Event Listeners
 receiveMessageButton.addEventListener('click', getRandomMessage);
 createMessageButton.addEventListener('click', showForm)
 cancelButton.addEventListener('click', hideForm)
 submitButton.addEventListener('click',createMessage)
 removeMessageButton.addEventListener("click", deleteMessage)
+
 //Event Handlers
 function getRandomAffirmation(){
     var randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
     return randomAffirmation;
 }
-
 function getRandomMantra(){
     var randomMantra = mantras[Math.floor(Math.random() * mantras.length)];
     return randomMantra;
 }
-
 function showMessage(){
     image.style.display = 'none';
     removeMessageButton.classList.remove('hidden')
-
-
-
 }
 function showForm(){
 messageSelectorView.classList.add('hidden');
@@ -44,16 +40,7 @@ createMessageView.classList.add('hidden')
 event.preventDefault()
 }
 
-
-
-
-
-
-
-
-
 //Functions 
-
 function getRandomMessage() {
     var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
     if (selectedSelfCare && selectedSelfCare.value) {
@@ -70,7 +57,6 @@ function getRandomMessage() {
         showMessage();
     }
 }
-
 function createMessage(event){
     var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
     var userMessage = document.querySelector('input[name="user-message"').value

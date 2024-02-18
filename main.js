@@ -13,7 +13,8 @@ var createMessageView = document.querySelector(".make-own-message")
 //Query Selectors
 receiveMessageButton.addEventListener('click', getRandomMessage);
 createMessageButton.addEventListener('click', showForm)
-//cancelButton.addEventListener("click", hideForm)
+cancelButton.addEventListener('click', hideForm)
+submitButton.addEventListener('click',createMessage)
 //Event Handlers
 function getRandomAffirmation(){
     var randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
@@ -34,9 +35,18 @@ function showForm(){
 messageSelectorView.classList.add('hidden');
 createMessageView.classList.remove('hidden')
 }
-// function hideForm(){
- 
-// }
+function hideForm(){
+messageSelectorView.classList.remove('hidden');
+createMessageView.classList.add('hidden')
+}
+
+
+
+
+
+
+
+
 
 //Functions 
 
@@ -51,12 +61,33 @@ function getRandomMessage() {
                 case 'mantra':
                     randomMessage = getRandomMantra();
                     break;
-                }
-            console.log(randomMessage)
-            console.log(selectedSelfCare)
-            message.innerText = randomMessage;
-            showMessage();
-                
-    
+        }
+        message.innerText = randomMessage;
+        showMessage();
     }
+}
+
+function createMessage(event){
+    var selectedSelfCare = document.querySelector('input[name="message-type"]:checked')
+    var userMessage = document.querySelector('input[name="user-message"').value
+    if (selectedSelfCare && selectedSelfCare.value && userMessage) {
+              switch (selectedSelfCare.value) {
+            case 'affirmation':
+                affirmations.push(userMessage)
+                break;
+            case 'mantra':
+                mantras.push(userMessage)
+                break;
+        }
+        console.log('mantra1',userMessage)
+        console.log('mantra2',selectedSelfCare)
+        console.log('please',mantras)
+        //console.log('affirmations', affirmations)
+
+        message.innerText = userMessage;
+        event.preventDefault()
+        showMessage()
+        
+    }
+    
 }
